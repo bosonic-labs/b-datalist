@@ -1,0 +1,14 @@
+<element name="b-datalist">
+    <style>
+        b-datalist {
+            display: none;
+        }
+    </style>
+    <script>
+        ({
+            get options() {
+                return this.querySelectorAll('option');
+            }
+        });
+    </script>
+</element>
