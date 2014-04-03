@@ -1,7 +1,11 @@
 (function () {
-    Bosonic.registerElement('b-datalist', {
-        get options() {
-            return this.querySelectorAll('option');
-        }
-    });
+    var BDatalistPrototype = Object.create(HTMLElement.prototype, {
+            options: {
+                enumerable: true,
+                get: function () {
+                    return this.querySelectorAll('option');
+                }
+            }
+        });
+    window.BDatalist = document.registerElement('b-datalist', { prototype: BDatalistPrototype });
 }());
